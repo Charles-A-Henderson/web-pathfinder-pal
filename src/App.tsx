@@ -13,8 +13,7 @@ import About from "./pages/About";
 import Blog from "./pages/Blog";
 import Programs from "./pages/Programs";
 import NotFound from "./pages/NotFound";
-// Chatbot disabled — depends on Lovable AI gateway
-// import Chatbot from "@/components/Chatbot";
+import Chatbot from "@/components/Chatbot";
 
 const queryClient = new QueryClient();
 
@@ -45,7 +44,7 @@ const App = () => (
       <BrowserRouter>
         <ScrollToTop />
         <AnimatedRoutes />
-        {/* <Chatbot /> */}
+        <Chatbot />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
