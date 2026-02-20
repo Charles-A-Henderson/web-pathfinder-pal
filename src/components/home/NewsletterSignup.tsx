@@ -6,6 +6,7 @@ import { Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import { z } from "zod";
+import { checkRateLimit, recordSubmission } from "@/hooks/use-rate-limit";
 
 const emailSchema = z.string().trim().email("Please enter a valid email").max(255, "Email too long");
 
@@ -16,6 +17,13 @@ const NewsletterSignup = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    const { allowed, remainingSeconds } = checkRateLimit("newsletter");
+    if (!allowed) {
+      toast({ title: "Please wait", description: `You can submit again in ${remainingSeconds} seconds.`, variant: "destructive" });
+      return;
+    }
+
     const result = emailSchema.safeParse(email);
     if (!result.success) {
       toast({ title: "Invalid email", description: result.error.issues[0].message, variant: "destructive" });
@@ -34,6 +42,7 @@ const NewsletterSignup = () => {
       }
       return;
     }
+    recordSubmission("newsletter");
     setSubmitted(true);
   };
 
