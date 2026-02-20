@@ -8,6 +8,7 @@ import { Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import { z } from "zod";
+import { checkRateLimit, recordSubmission } from "@/hooks/use-rate-limit";
 
 const inquirySchema = z.object({
   first_name: z.string().trim().min(1, "First name is required").max(100),
@@ -25,6 +26,13 @@ const InquiryForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    const { allowed, remainingSeconds } = checkRateLimit("corporate_inquiry");
+    if (!allowed) {
+      toast({ title: "Please wait", description: `You can submit again in ${remainingSeconds} seconds.`, variant: "destructive" });
+      return;
+    }
+
     const form = e.target as HTMLFormElement;
     const fd = new FormData(form);
 
@@ -64,6 +72,7 @@ const InquiryForm = () => {
       }
       return;
     }
+    recordSubmission("corporate_inquiry");
     setSubmitted(true);
   };
 
