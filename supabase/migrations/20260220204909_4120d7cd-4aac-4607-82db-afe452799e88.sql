@@ -1,0 +1,1 @@
+ALTER TABLE public.corporate_inquiries ADD CONSTRAINT corporate_inquiries_email_unique UNIQUE (email);
