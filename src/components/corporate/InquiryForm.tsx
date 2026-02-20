@@ -26,14 +26,15 @@ const InquiryForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
+    const form = e.target as HTMLFormElement;
+    if ((form.elements.namedItem("website") as HTMLInputElement)?.value) return;
     const { allowed, remainingSeconds } = checkRateLimit("corporate_inquiry");
     if (!allowed) {
       toast({ title: "Please wait", description: `You can submit again in ${remainingSeconds} seconds.`, variant: "destructive" });
       return;
     }
 
-    const form = e.target as HTMLFormElement;
+
     const fd = new FormData(form);
 
     const raw = {
@@ -129,6 +130,7 @@ const InquiryForm = () => {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="bg-card border border-border rounded-2xl p-8 space-y-5">
+                <input type="text" name="website" className="absolute opacity-0 pointer-events-none h-0 w-0" tabIndex={-1} autoComplete="off" aria-hidden="true" />
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <label className="text-sm font-medium text-foreground mb-1.5 block">First Name</label>

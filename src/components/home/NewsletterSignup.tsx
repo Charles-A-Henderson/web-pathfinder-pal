@@ -17,7 +17,8 @@ const NewsletterSignup = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
+    const form = e.target as HTMLFormElement;
+    if ((form.elements.namedItem("website") as HTMLInputElement)?.value) return;
     const { allowed, remainingSeconds } = checkRateLimit("newsletter");
     if (!allowed) {
       toast({ title: "Please wait", description: `You can submit again in ${remainingSeconds} seconds.`, variant: "destructive" });
@@ -68,6 +69,7 @@ const NewsletterSignup = () => {
             </p>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+              <input type="text" name="website" className="absolute opacity-0 pointer-events-none h-0 w-0" tabIndex={-1} autoComplete="off" aria-hidden="true" />
               <Input
                 type="email"
                 placeholder="Your email address"
