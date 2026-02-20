@@ -4,12 +4,62 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Loader2 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "@/hooks/use-toast";
+import { z } from "zod";
+
+const inquirySchema = z.object({
+  first_name: z.string().trim().min(1, "First name is required").max(100),
+  last_name: z.string().trim().min(1, "Last name is required").max(100),
+  email: z.string().trim().email("Invalid email").max(255),
+  company: z.string().trim().min(1, "Company is required").max(200),
+  team_size: z.string().optional(),
+  message: z.string().trim().max(2000).optional(),
+});
 
 const InquiryForm = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [teamSize, setTeamSize] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    const fd = new FormData(form);
+
+    const raw = {
+      first_name: (fd.get("first_name") as string) || "",
+      last_name: (fd.get("last_name") as string) || "",
+      email: (fd.get("email") as string) || "",
+      company: (fd.get("company") as string) || "",
+      team_size: teamSize || undefined,
+      message: (fd.get("message") as string) || undefined,
+    };
+
+    const result = inquirySchema.safeParse(raw);
+    if (!result.success) {
+      toast({ title: "Validation error", description: result.error.issues[0].message, variant: "destructive" });
+      return;
+    }
+
+    const insertData = {
+      first_name: result.data.first_name,
+      last_name: result.data.last_name,
+      email: result.data.email,
+      company: result.data.company,
+      team_size: result.data.team_size ?? null,
+      message: result.data.message ?? null,
+    };
+
+    setLoading(true);
+    const { error } = await supabase.from("corporate_inquiries").insert([insertData]);
+    setLoading(false);
+
+    if (error) {
+      toast({ title: "Something went wrong", description: "Please try again later.", variant: "destructive" });
+      return;
+    }
     setSubmitted(true);
   };
 
@@ -69,27 +119,27 @@ const InquiryForm = () => {
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <label className="text-sm font-medium text-foreground mb-1.5 block">First Name</label>
-                    <Input placeholder="Jane" required className="rounded-lg" />
+                    <Input name="first_name" placeholder="Jane" required maxLength={100} className="rounded-lg" />
                   </div>
                   <div>
                     <label className="text-sm font-medium text-foreground mb-1.5 block">Last Name</label>
-                    <Input placeholder="Smith" required className="rounded-lg" />
+                    <Input name="last_name" placeholder="Smith" required maxLength={100} className="rounded-lg" />
                   </div>
                 </div>
 
                 <div>
                   <label className="text-sm font-medium text-foreground mb-1.5 block">Work Email</label>
-                  <Input type="email" placeholder="jane@company.com" required className="rounded-lg" />
+                  <Input name="email" type="email" placeholder="jane@company.com" required maxLength={255} className="rounded-lg" />
                 </div>
 
                 <div>
                   <label className="text-sm font-medium text-foreground mb-1.5 block">Company</label>
-                  <Input placeholder="Acme Corp" required className="rounded-lg" />
+                  <Input name="company" placeholder="Acme Corp" required maxLength={200} className="rounded-lg" />
                 </div>
 
                 <div>
                   <label className="text-sm font-medium text-foreground mb-1.5 block">Team Size</label>
-                  <Select>
+                  <Select value={teamSize} onValueChange={setTeamSize}>
                     <SelectTrigger className="rounded-lg">
                       <SelectValue placeholder="Select team size" />
                     </SelectTrigger>
@@ -104,11 +154,11 @@ const InquiryForm = () => {
 
                 <div>
                   <label className="text-sm font-medium text-foreground mb-1.5 block">What are you looking for?</label>
-                  <Textarea placeholder="Tell us about your goals, timeline, and any specific needs..." rows={4} className="rounded-lg" />
+                  <Textarea name="message" placeholder="Tell us about your goals, timeline, and any specific needs..." rows={4} maxLength={2000} className="rounded-lg" />
                 </div>
 
-                <Button type="submit" size="lg" className="w-full rounded-full bg-sage text-sage-foreground hover:bg-sage/90 font-semibold">
-                  Send Inquiry
+                <Button type="submit" size="lg" disabled={loading} className="w-full rounded-full bg-sage text-sage-foreground hover:bg-sage/90 font-semibold">
+                  {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : "Send Inquiry"}
                 </Button>
               </form>
             )}

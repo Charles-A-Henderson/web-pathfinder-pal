@@ -194,7 +194,20 @@ const Chatbot = () => {
                     }`}
                   >
                     {m.role === "assistant" ? (
-                      <ReactMarkdown>{m.content}</ReactMarkdown>
+                      <ReactMarkdown
+                        components={{
+                          a: ({ href, children, ...props }) => {
+                            const safe = href && (href.startsWith("https://") || href.startsWith("http://") || href.startsWith("/") || href.startsWith("#"));
+                            return safe ? (
+                              <a href={href} target="_blank" rel="noopener noreferrer" {...props}>{children}</a>
+                            ) : (
+                              <span>{children}</span>
+                            );
+                          },
+                        }}
+                      >
+                        {m.content}
+                      </ReactMarkdown>
                     ) : (
                       m.content
                     )}
@@ -219,6 +232,7 @@ const Chatbot = () => {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Type a message…"
+                maxLength={500}
                 className="flex-1 bg-transparent text-sm text-foreground placeholder:text-muted-foreground outline-none"
                 disabled={loading}
               />

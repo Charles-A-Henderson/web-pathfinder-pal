@@ -2,14 +2,35 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { Loader2 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "@/hooks/use-toast";
+import { z } from "zod";
+
+const emailSchema = z.string().trim().email("Please enter a valid email").max(255, "Email too long");
 
 const NewsletterSignup = () => {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) setSubmitted(true);
+    const result = emailSchema.safeParse(email);
+    if (!result.success) {
+      toast({ title: "Invalid email", description: result.error.issues[0].message, variant: "destructive" });
+      return;
+    }
+
+    setLoading(true);
+    const { error } = await supabase.from("newsletter_signups").insert({ email: result.data });
+    setLoading(false);
+
+    if (error) {
+      toast({ title: "Something went wrong", description: "Please try again later.", variant: "destructive" });
+      return;
+    }
+    setSubmitted(true);
   };
 
   return (
@@ -40,10 +61,15 @@ const NewsletterSignup = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
+                maxLength={255}
                 className="rounded-full bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50 focus-visible:ring-accent"
               />
-              <Button type="submit" className="rounded-full px-8 bg-accent text-accent-foreground hover:bg-accent/90 font-semibold whitespace-nowrap">
-                Subscribe
+              <Button
+                type="submit"
+                disabled={loading}
+                className="rounded-full px-8 bg-accent text-accent-foreground hover:bg-accent/90 font-semibold whitespace-nowrap"
+              >
+                {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : "Subscribe"}
               </Button>
             </form>
           )}
