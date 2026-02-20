@@ -57,7 +57,11 @@ const InquiryForm = () => {
     setLoading(false);
 
     if (error) {
-      toast({ title: "Something went wrong", description: "Please try again later.", variant: "destructive" });
+      if (error.code === "23505") {
+        toast({ title: "Already received", description: "We already have an inquiry from this email. We'll be in touch soon!" });
+      } else {
+        toast({ title: "Something went wrong", description: "Please try again later.", variant: "destructive" });
+      }
       return;
     }
     setSubmitted(true);
