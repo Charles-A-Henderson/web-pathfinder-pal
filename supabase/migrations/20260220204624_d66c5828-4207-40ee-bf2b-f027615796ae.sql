@@ -1,0 +1,1 @@
+ALTER TABLE public.newsletter_signups ADD CONSTRAINT newsletter_signups_email_unique UNIQUE (email);

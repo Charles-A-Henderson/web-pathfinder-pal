@@ -27,7 +27,11 @@ const NewsletterSignup = () => {
     setLoading(false);
 
     if (error) {
-      toast({ title: "Something went wrong", description: "Please try again later.", variant: "destructive" });
+      if (error.code === "23505") {
+        toast({ title: "Already subscribed", description: "This email is already on our list. Thank you for your interest!" });
+      } else {
+        toast({ title: "Something went wrong", description: "Please try again later.", variant: "destructive" });
+      }
       return;
     }
     setSubmitted(true);
