@@ -195,6 +195,11 @@ const Chatbot = () => {
                   >
                     {m.role === "assistant" ? (
                       <ReactMarkdown
+                        allowedElements={[
+                          'p', 'strong', 'em', 'ul', 'ol', 'li', 'a', 'br',
+                          'code', 'pre', 'blockquote', 'h1', 'h2', 'h3', 'h4',
+                        ]}
+                        unwrapDisallowed={true}
                         components={{
                           a: ({ href, children, ...props }) => {
                             const safe = href && (href.startsWith("https://") || href.startsWith("http://") || href.startsWith("/") || href.startsWith("#"));
