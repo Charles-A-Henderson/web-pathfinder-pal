@@ -8,7 +8,7 @@ const ALLOWED_ORIGINS = [
 
 function getCorsHeaders(req: Request) {
   const origin = req.headers.get("Origin") || "";
-  const allowed = ALLOWED_ORIGINS.some((o) => origin === o || origin.endsWith(".lovable.app"));
+  const allowed = ALLOWED_ORIGINS.includes(origin);
   return {
     "Access-Control-Allow-Origin": allowed ? origin : ALLOWED_ORIGINS[0],
     "Access-Control-Allow-Headers":
@@ -145,7 +145,7 @@ serve(async (req) => {
   } catch (e) {
     console.error("chat error:", e);
     return new Response(
-      JSON.stringify({ error: e instanceof Error ? e.message : "Unknown error" }),
+      JSON.stringify({ error: "Unable to process your request. Please try again later." }),
       { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   }
