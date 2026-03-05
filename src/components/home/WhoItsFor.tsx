@@ -6,16 +6,16 @@ import { Button } from "@/components/ui/button";
 const audiences = [
   {
     icon: GraduationCap,
-    title: "Aspiring Teachers",
-    description: "Launch a meaningful career in meditation instruction with our comprehensive 12-week certification program. Join 1,000+ graduates teaching worldwide.",
-    cta: "Explore Training",
+    title: "Learn to Guide",
+    description: "Go deeper on your practice and share with others — in our world-renowned certificate Meditation Teacher Training program (3 months). Join 1,000+ graduates teaching worldwide.",
+    cta: "Explore MTT",
     href: "/teacher-training",
   },
   {
     icon: Building2,
     title: "Corporate Teams",
-    description: "Bring mindfulness to your workplace with customized programs. Reduce burnout, improve focus, and build resilient teams trusted by Fortune 500 companies.",
-    cta: "Corporate Programs",
+    description: "Reduce burnout, improve focus, and build resilience in your teams by bringing mindfulness to your workplace. Learn tools to reduce stress, increase productivity and enhance teamwork. Trusted by Fortune 500 companies.",
+    cta: "Book a Session",
     href: "/corporate",
   },
   {
