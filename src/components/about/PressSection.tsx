@@ -75,7 +75,7 @@ const PressSection = () => {
                 className="bg-card border border-border rounded-xl p-6 hover:shadow-md transition-shadow group cursor-pointer"
               >
                 <div className="flex items-start justify-between mb-3">
-                  <img src={item.logo} alt={item.outlet} className="h-5 w-auto opacity-70" />
+                  <img src={item.logo} alt={item.outlet} className="h-7 md:h-8 w-auto object-contain opacity-85" />
                   <span className="text-xs text-muted-foreground">{item.year}</span>
                 </div>
                 <p className="text-sm text-muted-foreground italic leading-relaxed">{item.headline}</p>
