@@ -2,11 +2,11 @@ import { motion } from "framer-motion";
 import { Brain, Users, Mic, BookOpen, Heart } from "lucide-react";
 
 const items = [
-  { icon: Brain, title: "Meditation Techniques", desc: "Master 8+ meditation styles including mindfulness, loving-kindness, body scan, and visualization." },
-  { icon: BookOpen, title: "Teaching Methodology", desc: "Learn how to structure classes, guide students, and adapt to different skill levels." },
-  { icon: Users, title: "Group Facilitation", desc: "Build confidence leading groups from intimate sessions to large corporate workshops." },
-  { icon: Mic, title: "Voice & Presence", desc: "Develop your unique teaching voice with guided exercises in tone, pacing, and presence." },
+  { icon: Brain, title: "Meditation Techniques 🙏", desc: "Master 10+ meditation styles including mindfulness of the breath, metta, body scan, and walking meditations." },
+  { icon: Mic, title: "Teaching Voice 🎤", desc: "Develop your unique teaching voice and presence to create a more profound and lasting connection with every student — ensuring your authentic self shines through." },
+  { icon: BookOpen, title: "Teaching Methodology", desc: "Learn to structure classes, guide students, adapt to all skill levels, and tailor your approach for neurodivergent learners." },
   { icon: Heart, title: "Trauma-Informed Practice", desc: "Understand how to create safe, inclusive spaces for all participants." },
+  { icon: Users, title: "Community Building & Group Facilitation 🤝", desc: "Build confidence leading groups and cultivating thriving community — from intimate sessions to large corporate workshops, conferences, and festivals." },
   { icon: Heart, title: "Mindfulness in Everyday Life", desc: "Participate in weekly challenges to integrate mindful practices into your daily decision-making, shifting you towards living with more joy and ease." },
 ];
 
