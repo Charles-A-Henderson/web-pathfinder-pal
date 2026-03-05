@@ -17,7 +17,7 @@ const TeacherHero = () => {
             Become a Certified Meditation Teacher
           </h1>
           <p className="text-lg text-primary-foreground/85 mb-8 max-w-xl font-light leading-relaxed">
-            Our rigorous 12-week program gives you the skills, confidence, and certification to lead meditation for individuals, groups, and organizations worldwide.
+            Our live, interactive 12-week program gives you the skills, confidence, and certification to lead meditation for individuals, groups, and organizations worldwide.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button asChild size="lg" className="rounded-full px-8 bg-accent text-accent-foreground hover:bg-accent/90 font-semibold">
@@ -27,7 +27,7 @@ const TeacherHero = () => {
               <a href="mailto:training@thepath.com?subject=Program%20Overview%20Request">Program Overview</a>
             </Button>
           </div>
-          <p className="text-primary-foreground/60 text-sm mt-6">Scholarships available · Next cohort starts March 2026</p>
+          <p className="text-primary-foreground/60 text-sm mt-6">Scholarships available · email us to learn about our next cohort: sit@thepath.com</p>
         </motion.div>
       </div>
     </section>
