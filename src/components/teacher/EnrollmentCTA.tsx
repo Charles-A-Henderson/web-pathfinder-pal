@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
+import ApplicationFormDialog from "./ApplicationFormDialog";
 
 const includes = [
   "12 weeks of live instruction",
@@ -11,7 +13,13 @@ const includes = [
   "Business launch toolkit",
 ];
 
-const EnrollmentCTA = () => {
+interface EnrollmentCTAProps {
+  autoOpenForm?: boolean;
+}
+
+const EnrollmentCTA = ({ autoOpenForm = false }: EnrollmentCTAProps) => {
+  const [formOpen, setFormOpen] = useState(autoOpenForm);
+
   return (
     <section id="enroll" className="py-24 bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 lg:px-8">
@@ -44,8 +52,12 @@ const EnrollmentCTA = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Button asChild size="lg" className="rounded-full px-10 bg-accent text-accent-foreground hover:bg-accent/90 font-semibold text-base">
-                <a href="mailto:training@thepath.com?subject=Application%20Inquiry">Apply Now</a>
+              <Button
+                size="lg"
+                className="rounded-full px-10 bg-accent text-accent-foreground hover:bg-accent/90 font-semibold text-base"
+                onClick={() => setFormOpen(true)}
+              >
+                Apply Now
               </Button>
               <Button asChild size="lg" variant="outline" className="rounded-full px-10 border-primary-foreground/60 text-primary-foreground bg-primary-foreground/10 hover:bg-primary-foreground/20 font-semibold">
                 <a href="mailto:training@thepath.com?subject=Schedule%20a%20Call">Schedule a Call</a>
@@ -61,6 +73,8 @@ const EnrollmentCTA = () => {
           </p>
         </motion.div>
       </div>
+
+      <ApplicationFormDialog open={formOpen} onOpenChange={setFormOpen} />
     </section>
   );
 };

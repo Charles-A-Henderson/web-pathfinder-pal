@@ -65,6 +65,42 @@ export type Database = {
         }
         Relationships: []
       }
+      teacher_training_applications: {
+        Row: {
+          created_at: string
+          email: string
+          first_name: string
+          id: string
+          last_name: string
+          location: string | null
+          meditation_experience: string | null
+          motivation: string | null
+          newsletter_opt_in: boolean
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          first_name: string
+          id?: string
+          last_name: string
+          location?: string | null
+          meditation_experience?: string | null
+          motivation?: string | null
+          newsletter_opt_in?: boolean
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          first_name?: string
+          id?: string
+          last_name?: string
+          location?: string | null
+          meditation_experience?: string | null
+          motivation?: string | null
+          newsletter_opt_in?: boolean
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

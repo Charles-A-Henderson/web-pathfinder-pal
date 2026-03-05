@@ -1,3 +1,4 @@
+import { useSearchParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TeacherHero from "@/components/teacher/TeacherHero";
@@ -9,6 +10,9 @@ import EnrollmentCTA from "@/components/teacher/EnrollmentCTA";
 import SEO from "@/components/SEO";
 
 const TeacherTraining = () => {
+  const [searchParams] = useSearchParams();
+  const autoOpenForm = searchParams.get("apply") === "true";
+
   return (
     <div className="min-h-screen bg-background">
       <SEO
@@ -40,7 +44,7 @@ const TeacherTraining = () => {
         <CurriculumTimeline />
         <StudentStories />
         <TeacherFAQ />
-        <EnrollmentCTA />
+        <EnrollmentCTA autoOpenForm={autoOpenForm} />
       </main>
       <Footer />
     </div>

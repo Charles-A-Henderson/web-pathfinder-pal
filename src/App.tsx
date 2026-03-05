@@ -33,7 +33,7 @@ const AnimatedRoutes = () => {
 
         {/* 301-style redirects: old thepath.com routes → new routes */}
         <Route path="/teacher" element={<Redirect to="/teacher-training" />} />
-        <Route path="/teacherpay" element={<Redirect to="/teacher-training" />} />
+        <Route path="/teacherpay" element={<Redirect to="/teacher-training?apply=true" />} />
         <Route path="/scholarships" element={<Redirect to="/teacher-training" />} />
         <Route path="/30days" element={<Redirect to="/programs" />} />
         <Route path="/business" element={<Redirect to="/programs" />} />
