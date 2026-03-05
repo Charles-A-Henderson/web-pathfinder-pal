@@ -36,7 +36,7 @@ const PressLogos = () => {
               src={logo.src}
               alt={logo.name}
               title={logo.name}
-              className="h-6 md:h-8 w-auto opacity-40 hover:opacity-70 transition-opacity grayscale"
+              className="h-8 md:h-12 w-auto opacity-50 hover:opacity-80 transition-opacity"
             />
           ))}
         </motion.div>
