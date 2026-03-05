@@ -28,16 +28,20 @@ const PressLogos = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="flex flex-wrap justify-center items-center gap-10 md:gap-16"
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6"
         >
           {pressLogos.map((logo) => (
-            <img
+            <div
               key={logo.name}
-              src={logo.src}
-              alt={logo.name}
-              title={logo.name}
-              className="h-8 md:h-12 w-auto opacity-50 hover:opacity-80 transition-opacity"
-            />
+              className="flex h-14 md:h-16 items-center justify-center rounded-lg border border-border/50 bg-background/50 px-4"
+            >
+              <img
+                src={logo.src}
+                alt={logo.name}
+                title={logo.name}
+                className="max-h-7 md:max-h-8 w-auto max-w-full object-contain opacity-80 hover:opacity-100 transition-opacity duration-200"
+              />
+            </div>
           ))}
         </motion.div>
       </div>
