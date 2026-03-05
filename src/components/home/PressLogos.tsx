@@ -1,12 +1,19 @@
 import { motion } from "framer-motion";
 
+import nytLogo from "@/assets/press/nyt.svg";
+import forbesLogo from "@/assets/press/forbes.svg";
+import wsjLogo from "@/assets/press/wsj.svg";
+import incLogo from "@/assets/press/inc.svg";
+import fastCoLogo from "@/assets/press/fastcompany.svg";
+import entrepreneurLogo from "@/assets/press/entrepreneur.svg";
+
 const pressLogos = [
-  { name: "The New York Times", abbr: "NYT" },
-  { name: "Forbes", abbr: "Forbes" },
-  { name: "The Wall Street Journal", abbr: "WSJ" },
-  { name: "Inc.", abbr: "Inc." },
-  { name: "Fast Company", abbr: "Fast Co." },
-  { name: "Entrepreneur", abbr: "Entrep." },
+  { name: "The New York Times", src: nytLogo },
+  { name: "Forbes", src: forbesLogo },
+  { name: "The Wall Street Journal", src: wsjLogo },
+  { name: "Inc.", src: incLogo },
+  { name: "Fast Company", src: fastCoLogo },
+  { name: "Entrepreneur", src: entrepreneurLogo },
 ];
 
 const PressLogos = () => {
@@ -21,16 +28,16 @@ const PressLogos = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="flex flex-wrap justify-center items-center gap-8 md:gap-16"
+          className="flex flex-wrap justify-center items-center gap-10 md:gap-16"
         >
           {pressLogos.map((logo) => (
-            <span
+            <img
               key={logo.name}
-              className="font-serif text-xl md:text-2xl font-bold text-muted-foreground/40 hover:text-muted-foreground/70 transition-colors"
+              src={logo.src}
+              alt={logo.name}
               title={logo.name}
-            >
-              {logo.abbr}
-            </span>
+              className="h-6 md:h-8 w-auto opacity-40 hover:opacity-70 transition-opacity grayscale"
+            />
           ))}
         </motion.div>
       </div>

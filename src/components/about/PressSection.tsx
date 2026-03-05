@@ -1,40 +1,47 @@
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 
+import nytLogo from "@/assets/press/nyt.svg";
+import forbesLogo from "@/assets/press/forbes.svg";
+import wsjLogo from "@/assets/press/wsj.svg";
+import incLogo from "@/assets/press/inc.svg";
+import fastCoLogo from "@/assets/press/fastcompany.svg";
+import entrepreneurLogo from "@/assets/press/entrepreneur.svg";
+
 const pressItems = [
   {
     outlet: "The New York Times",
-    abbr: "NYT",
+    logo: nytLogo,
     headline: "\"How One Former Tech CEO Found Peace Through Meditation\"",
     year: "2019",
   },
   {
     outlet: "Forbes",
-    abbr: "Forbes",
+    logo: forbesLogo,
     headline: "\"The Path Is Changing How Corporate America Meditates\"",
     year: "2020",
   },
   {
     outlet: "The Wall Street Journal",
-    abbr: "WSJ",
+    logo: wsjLogo,
     headline: "\"Meditation Goes Mainstream in the C-Suite\"",
     year: "2021",
   },
   {
     outlet: "Inc.",
-    abbr: "Inc.",
+    logo: incLogo,
     headline: "\"This Founder Left Tech to Build a Meditation Empire\"",
     year: "2018",
   },
   {
     outlet: "Fast Company",
-    abbr: "Fast Co.",
+    logo: fastCoLogo,
     headline: "\"Why Fortune 500 Companies Are Investing in Mindfulness\"",
     year: "2022",
   },
   {
     outlet: "Entrepreneur",
-    abbr: "Entrep.",
+    logo: entrepreneurLogo,
     headline: "\"Dina Kaplan on Building The Path From Burnout\"",
     year: "2020",
   },
@@ -68,7 +75,7 @@ const PressSection = () => {
                 className="bg-card border border-border rounded-xl p-6 hover:shadow-md transition-shadow group cursor-pointer"
               >
                 <div className="flex items-start justify-between mb-3">
-                  <span className="font-serif text-lg font-bold text-foreground">{item.abbr}</span>
+                  <img src={item.logo} alt={item.outlet} className="h-5 w-auto opacity-70" />
                   <span className="text-xs text-muted-foreground">{item.year}</span>
                 </div>
                 <p className="text-sm text-muted-foreground italic leading-relaxed">{item.headline}</p>
