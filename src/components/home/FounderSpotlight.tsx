@@ -38,7 +38,7 @@ const FounderSpotlight = () => {
               high-quality meditation training to individuals and organizations worldwide.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              A graduate of Yale University and featured in The New York Times, Forbes, and The Wall Street Journal, 
+              A graduate of Wesleyan University and featured in The New York Times, Forbes, and The Wall Street Journal, 
               Dina has spent over a decade making meditation approachable, impactful, and transformative 
               for thousands of students and corporate clients alike.
             </p>

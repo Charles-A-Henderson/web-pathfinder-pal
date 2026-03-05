@@ -24,7 +24,7 @@ const TeacherHero = () => {
               <a href="#enroll">Apply Now</a>
             </Button>
             <Button asChild size="lg" variant="outline" className="rounded-full px-8 border-primary-foreground/60 text-primary-foreground bg-primary-foreground/10 hover:bg-primary-foreground/20 font-semibold">
-              <a href="mailto:training@thepath.com?subject=Syllabus%20Request">Download Syllabus</a>
+              <a href="mailto:training@thepath.com?subject=Program%20Overview%20Request">Program Overview</a>
             </Button>
           </div>
           <p className="text-primary-foreground/60 text-sm mt-6">Scholarships available · Next cohort starts March 2026</p>

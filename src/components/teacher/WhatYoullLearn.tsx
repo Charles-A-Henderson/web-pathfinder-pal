@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Brain, Users, Mic, BookOpen, Heart, Shield } from "lucide-react";
+import { Brain, Users, Mic, BookOpen, Heart } from "lucide-react";
 
 const items = [
   { icon: Brain, title: "Meditation Techniques", desc: "Master 8+ meditation styles including mindfulness, loving-kindness, body scan, and visualization." },
@@ -7,7 +7,7 @@ const items = [
   { icon: Users, title: "Group Facilitation", desc: "Build confidence leading groups from intimate sessions to large corporate workshops." },
   { icon: Mic, title: "Voice & Presence", desc: "Develop your unique teaching voice with guided exercises in tone, pacing, and presence." },
   { icon: Heart, title: "Trauma-Informed Practice", desc: "Understand how to create safe, inclusive spaces for all participants." },
-  { icon: Shield, title: "Business of Teaching", desc: "Launch your practice with guidance on marketing, pricing, and building a client base." },
+  { icon: Heart, title: "Mindfulness in Everyday Life", desc: "Participate in weekly challenges to integrate mindful practices into your daily decision-making, shifting you towards living with more joy and ease." },
 ];
 
 const WhatYoullLearn = () => {

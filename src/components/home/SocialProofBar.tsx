@@ -2,10 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 const stats = [
-  { value: 500, suffix: "+", label: "Fortune 500 Clients" },
-  { value: 1000, suffix: "+", label: "Certified Teachers" },
-  { value: 185, suffix: "+", label: "5-Star Reviews" },
-  { value: 10, suffix: "+", label: "Years of Impact" },
+  { value: 150, suffix: "+", label: "Corporate Clients Including Fortune 500 Companies" },
+  { value: 1000, suffix: "+", label: "Certified Teachers Trained" },
+  { value: 200, suffix: "+", label: "5-Star Google Reviews" },
+  { value: 11, suffix: "", label: "Years of Impact" },
+  { value: 25, suffix: "+", label: "Countries" },
 ];
 
 const Counter = ({ target, suffix }: { target: number; suffix: string }) => {
@@ -51,7 +52,7 @@ const SocialProofBar = () => {
   return (
     <section className="py-16 bg-muted/50">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 text-center">
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}
