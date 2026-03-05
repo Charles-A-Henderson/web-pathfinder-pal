@@ -62,7 +62,7 @@ const EnrollmentCTA = ({ autoOpenForm = false }: EnrollmentCTAProps) => {
               </Button>
               <Button asChild size="lg" className="rounded-full px-10 bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-semibold text-base">
                 <Link to="/teacherpay">
-                  Pay &amp; Enroll
+                  Join Us
                 </Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="rounded-full px-10 border-primary-foreground/60 text-primary-foreground bg-primary-foreground/10 hover:bg-primary-foreground/20 font-semibold">
