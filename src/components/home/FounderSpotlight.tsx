@@ -34,13 +34,11 @@ const FounderSpotlight = () => {
             </h2>
             <p className="text-muted-foreground leading-relaxed">
               After co-founding a successful tech startup, Dina discovered meditation during a period of intense burnout. 
-              That experience transformed her life — and inspired her to create The Path, bringing accessible, 
-              high-quality meditation training to individuals and organizations worldwide.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              A graduate of Wesleyan University and featured in The New York Times, Forbes, and The Wall Street Journal, 
-              Dina has spent over a decade making meditation approachable, impactful, and transformative 
-              for thousands of students and corporate clients alike.
+              That experience transformed her life — and inspired her to create The Path, making meditation accessible 
+              and joyful for individuals and companies worldwide. A graduate of Wesleyan University and featured in 
+              The New York Times, Forbes, and The Wall Street Journal, Dina has spent over a decade making meditation 
+              approachable, impactful, delightful and transformative for thousands of students and corporate clients 
+              including Microsoft, Amazon, McKinsey and more.
             </p>
             <Button asChild variant="outline" className="rounded-full">
               <Link to="/about">Read Her Full Story</Link>
