@@ -4,10 +4,15 @@ import { Separator } from "@/components/ui/separator";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
-import heroImage from "@/assets/costarica-hero.jpg";
-import communityImage from "@/assets/costarica-community.jpg";
-import meditationImage from "@/assets/costarica-meditation.jpg";
 import founderImage from "@/assets/founder-portrait.jpg";
+import crHilltopGroup from "@/assets/cr-hilltop-group.jpg";
+import crBeachMeditation from "@/assets/cr-beach-meditation.jpg";
+import crIndoorMeditation from "@/assets/cr-indoor-meditation.jpg";
+import crGroupBeach from "@/assets/cr-group-beach.jpg";
+import crSunsetWalk from "@/assets/cr-sunset-walk.jpg";
+import crGroupSunset from "@/assets/cr-group-sunset.jpg";
+import crInfinityPool from "@/assets/cr-infinity-pool.jpg";
+import crPoolFire from "@/assets/cr-pool-fire.jpg";
 
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
@@ -29,7 +34,7 @@ const CostaRica = () => {
       <section className="relative pt-16">
         <div className="w-full">
           <img
-            src={heroImage}
+            src={crGroupSunset}
             alt="Las Catalinas, Costa Rica — Happy Mindfulness Retreat"
             className="w-full h-[50vh] md:h-[60vh] object-cover"
             loading="eager"
@@ -98,9 +103,9 @@ const CostaRica = () => {
             {...fadeUp}
             className="grid grid-cols-2 md:grid-cols-3 gap-4"
           >
-            <img src={heroImage} alt="Las Catalinas beach village" className="rounded-lg w-full h-48 md:h-64 object-cover" />
-            <img src={communityImage} alt="Community meditation session" className="rounded-lg w-full h-48 md:h-64 object-cover" />
-            <img src={meditationImage} alt="Morning meditation in tropical pavilion" className="rounded-lg w-full h-48 md:h-64 object-cover col-span-2 md:col-span-1" />
+            <img src={crInfinityPool} alt="Infinity pool sunset at Las Catalinas" className="rounded-lg w-full h-48 md:h-64 object-cover" />
+            <img src={crBeachMeditation} alt="Beach meditation session at sunset" className="rounded-lg w-full h-48 md:h-64 object-cover" />
+            <img src={crHilltopGroup} alt="Retreat group on hilltop overlooking ocean" className="rounded-lg w-full h-48 md:h-64 object-cover col-span-2 md:col-span-1" />
           </motion.div>
         </div>
       </section>
@@ -111,7 +116,7 @@ const CostaRica = () => {
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <motion.div {...fadeUp}>
               <img
-                src={meditationImage}
+                src={crSunsetWalk}
                 alt="Afternoon meditation session"
                 className="rounded-xl w-full shadow-lg"
               />
@@ -167,7 +172,7 @@ const CostaRica = () => {
             </motion.div>
             <motion.div {...fadeUp} className="order-1 md:order-2">
               <img
-                src={communityImage}
+                src={crGroupBeach}
                 alt="Group community meditation"
                 className="rounded-xl w-full shadow-lg"
               />
@@ -182,7 +187,7 @@ const CostaRica = () => {
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <motion.div {...fadeUp}>
               <img
-                src={heroImage}
+                src={crIndoorMeditation}
                 alt="Walking meditation on the beach"
                 className="rounded-xl w-full shadow-lg"
               />
@@ -255,7 +260,7 @@ const CostaRica = () => {
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <motion.div {...fadeUp}>
               <img
-                src={communityImage}
+                src={crPoolFire}
                 alt="Group meditating together"
                 className="rounded-xl w-full shadow-lg"
               />
