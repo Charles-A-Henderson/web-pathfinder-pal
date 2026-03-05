@@ -14,6 +14,7 @@ import About from "./pages/About";
 import Blog from "./pages/Blog";
 import Programs from "./pages/Programs";
 import TeacherPay from "./pages/TeacherPay";
+import CostaRica from "./pages/CostaRica";
 import NotFound from "./pages/NotFound";
 import Chatbot from "@/components/Chatbot";
 
@@ -34,6 +35,7 @@ const AnimatedRoutes = () => {
 
         {/* 301-style redirects: old thepath.com routes → new routes */}
         <Route path="/teacherpay" element={<PageTransition><TeacherPay /></PageTransition>} />
+        <Route path="/costarica" element={<PageTransition><CostaRica /></PageTransition>} />
         <Route path="/teacher" element={<Redirect to="/teacher-training" />} />
         <Route path="/scholarships" element={<Redirect to="/teacher-training" />} />
         <Route path="/30days" element={<Redirect to="/programs" />} />
