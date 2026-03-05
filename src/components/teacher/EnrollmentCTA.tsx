@@ -59,6 +59,11 @@ const EnrollmentCTA = ({ autoOpenForm = false }: EnrollmentCTAProps) => {
               >
                 Apply Now
               </Button>
+              <Button asChild size="lg" className="rounded-full px-10 bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-semibold text-base">
+                <a href="https://www.thepath.com/teacherpay" target="_blank" rel="noopener noreferrer">
+                  Pay &amp; Enroll
+                </a>
+              </Button>
               <Button asChild size="lg" variant="outline" className="rounded-full px-10 border-primary-foreground/60 text-primary-foreground bg-primary-foreground/10 hover:bg-primary-foreground/20 font-semibold">
                 <a href="mailto:training@thepath.com?subject=Schedule%20a%20Call">Schedule a Call</a>
               </Button>
