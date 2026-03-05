@@ -3,6 +3,7 @@ import HeroSection from "@/components/home/HeroSection";
 import SocialProofBar from "@/components/home/SocialProofBar";
 import WhoItsFor from "@/components/home/WhoItsFor";
 import Testimonials from "@/components/home/Testimonials";
+import FeaturedQuote from "@/components/home/FeaturedQuote";
 import FounderSpotlight from "@/components/home/FounderSpotlight";
 import PressLogos from "@/components/home/PressLogos";
 import NewsletterSignup from "@/components/home/NewsletterSignup";
@@ -29,6 +30,7 @@ const Index = () => {
         <HeroSection />
         <SocialProofBar />
         <WhoItsFor />
+        <FeaturedQuote />
         <Testimonials />
         <FounderSpotlight />
         <PressLogos />
