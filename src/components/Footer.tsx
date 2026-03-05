@@ -47,6 +47,10 @@ const Footer = () => {
           </div>
         </div>
 
+        <p className="text-center text-sm text-primary-foreground/60 mb-8">
+          Questions? Please email us at <a href="mailto:sit@thepath.com" className="underline hover:text-primary-foreground">sit@thepath.com</a>
+        </p>
+
         <div className="border-t border-primary-foreground/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-primary-foreground/40">
             © {new Date().getFullYear()} The Path. All rights reserved.
