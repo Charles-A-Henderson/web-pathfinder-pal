@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
 import ScrollToTop from "@/components/ScrollToTop";
+import Redirect from "@/components/Redirect";
 import Index from "./pages/Index";
 import TeacherTraining from "./pages/TeacherTraining";
 import Corporate from "./pages/Corporate";
@@ -29,6 +30,15 @@ const AnimatedRoutes = () => {
         <Route path="/about" element={<PageTransition><About /></PageTransition>} />
         <Route path="/blog" element={<PageTransition><Blog /></PageTransition>} />
         <Route path="/programs" element={<PageTransition><Programs /></PageTransition>} />
+
+        {/* 301-style redirects: old thepath.com routes → new routes */}
+        <Route path="/teacher" element={<Redirect to="/teacher-training" />} />
+        <Route path="/teacherpay" element={<Redirect to="/teacher-training" />} />
+        <Route path="/scholarships" element={<Redirect to="/teacher-training" />} />
+        <Route path="/30days" element={<Redirect to="/programs" />} />
+        <Route path="/business" element={<Redirect to="/programs" />} />
+        <Route path="/blog/*" element={<Redirect to="/blog" />} />
+
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
       </Routes>
