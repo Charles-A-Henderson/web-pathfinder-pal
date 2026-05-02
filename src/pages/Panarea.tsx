@@ -9,8 +9,9 @@ import panareaHero from "@/assets/panarea/panarea-hero.jpg";
 import panareaMeditation from "@/assets/panarea/panarea-meditation.jpg";
 import panareaCliffs from "@/assets/panarea/panarea-cliffs.jpg";
 import panareaBoat from "@/assets/panarea/panarea-boat.jpg";
-import panareaDinner from "@/assets/panarea/panarea-dinner.jpg";
+import panareaDinner from "@/assets/panarea/panarea-dinner-group.jpg";
 import panareaVillage from "@/assets/panarea/panarea-village.jpg";
+import panareaGroup from "@/assets/panarea/panarea-group.jpg";
 
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
@@ -138,8 +139,8 @@ const Panarea = () => {
               loading="lazy"
             />
             <img
-              src={panareaVillage}
-              alt="Whitewashed island village with bougainvillea overlooking the sea"
+              src={panareaGroup}
+              alt="The Path retreat group at sunset overlooking the Mediterranean in Panarea"
               className="rounded-lg w-full h-48 md:h-64 object-cover col-span-2 md:col-span-1"
               loading="lazy"
             />
