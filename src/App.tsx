@@ -15,6 +15,8 @@ import Blog from "./pages/Blog";
 import Programs from "./pages/Programs";
 import TeacherPay from "./pages/TeacherPay";
 import CostaRica from "./pages/CostaRica";
+import PaySuccess from "./pages/PaySuccess";
+import PayCancelled from "./pages/PayCancelled";
 import NotFound from "./pages/NotFound";
 import Chatbot from "@/components/Chatbot";
 
