@@ -38,7 +38,7 @@ const Panarea = () => {
           <img
             src={panareaHero}
             alt="Panarea, Italy — Mediterranean island at golden hour"
-            className="w-full h-[55vh] md:h-[70vh] object-cover"
+            className="w-full h-[55vh] md:h-[70vh] object-cover object-center"
             loading="eager"
             width={1920}
             height={1080}
