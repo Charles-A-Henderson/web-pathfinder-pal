@@ -25,6 +25,7 @@ const Footer = () => {
               <Link to="/teacher-training" className="block text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors">Teacher Training</Link>
               <Link to="/corporate" className="block text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors">Corporate</Link>
               <Link to="/programs" className="block text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors">All Programs</Link>
+              <Link to="/retreats" className="block text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors">Retreats</Link>
             </div>
           </div>
 

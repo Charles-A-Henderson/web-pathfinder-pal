@@ -7,6 +7,7 @@ const navLinks = [
   { label: "Teacher Training", href: "/teacher-training" },
   { label: "Corporate", href: "/corporate" },
   { label: "Programs", href: "/programs" },
+  { label: "Retreats", href: "/retreats" },
   { label: "About", href: "/about" },
   { label: "Blog", href: "/blog" },
 ];
