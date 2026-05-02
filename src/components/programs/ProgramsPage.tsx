@@ -106,6 +106,7 @@ const filters: { label: string; value: Audience }[] = [
 
 const ProgramsPage = () => {
   const [activeFilter, setActiveFilter] = useState<Audience>("all");
+  const [coachingOpen, setCoachingOpen] = useState(false);
 
   const filtered =
     activeFilter === "all"
