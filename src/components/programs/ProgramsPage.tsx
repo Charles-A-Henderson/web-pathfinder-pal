@@ -217,9 +217,19 @@ const ProgramsPage = () => {
                       {program.duration}
                     </p>
                   </div>
-                  <Button asChild size="sm" variant={program.featured ? "default" : "outline"}>
-                    <Link to={program.link}>{program.cta}</Link>
-                  </Button>
+                  {program.title === "Private Coaching" ? (
+                    <Button
+                      size="sm"
+                      variant={program.featured ? "default" : "outline"}
+                      onClick={() => setCoachingOpen(true)}
+                    >
+                      {program.cta}
+                    </Button>
+                  ) : (
+                    <Button asChild size="sm" variant={program.featured ? "default" : "outline"}>
+                      <Link to={program.link}>{program.cta}</Link>
+                    </Button>
+                  )}
                 </div>
               </motion.div>
             ))}
