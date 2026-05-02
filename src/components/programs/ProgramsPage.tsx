@@ -272,6 +272,8 @@ const ProgramsPage = () => {
           </motion.div>
         </div>
       </section>
+
+      <CoachingCheckoutDialog open={coachingOpen} onOpenChange={setCoachingOpen} />
     </div>
   );
 };
