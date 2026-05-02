@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { GraduationCap, Users, User, Mountain, Clock, Sparkles, Heart } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import CoachingCheckoutDialog from "@/components/programs/CoachingCheckoutDialog";
 
 type Audience = "all" | "aspiring-teachers" | "corporate" | "individuals";
 
