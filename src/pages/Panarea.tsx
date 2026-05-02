@@ -89,7 +89,7 @@ const Panarea = () => {
           </motion.p>
 
           <motion.div {...fadeUp} className="mb-6">
-            <p className="text-2xl font-semibold text-foreground mb-4">$1,800.00</p>
+            <p className="text-2xl font-semibold text-foreground mb-4">$2,200.00</p>
             <Button
               asChild
               size="lg"

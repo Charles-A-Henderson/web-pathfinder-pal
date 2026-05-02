@@ -17,7 +17,7 @@ const retreats = [
     image: panareaHero,
     blurb:
       "A joy-focused meditation retreat with Dina Kaplan on her favorite island in the world. Guided practice, dinners under the stars, and the sparkling Mediterranean.",
-    price: "$1,800",
+    price: "$2,200",
     featured: true,
   },
   {
