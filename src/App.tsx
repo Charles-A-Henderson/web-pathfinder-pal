@@ -15,6 +15,7 @@ import Blog from "./pages/Blog";
 import Programs from "./pages/Programs";
 import TeacherPay from "./pages/TeacherPay";
 import CostaRica from "./pages/CostaRica";
+import Panarea from "./pages/Panarea";
 import PaySuccess from "./pages/PaySuccess";
 import PayCancelled from "./pages/PayCancelled";
 import NotFound from "./pages/NotFound";
@@ -42,6 +43,7 @@ const AnimatedRoutes = () => {
         {/* 301-style redirects: old thepath.com routes → new routes */}
         <Route path="/teacherpay" element={<PageTransition><TeacherPay /></PageTransition>} />
         <Route path="/costarica" element={<PageTransition><CostaRica /></PageTransition>} />
+        <Route path="/panarea" element={<PageTransition><Panarea /></PageTransition>} />
         <Route path="/teacher" element={<Redirect to="/teacher-training" />} />
         <Route path="/scholarships" element={<Redirect to="/teacher-training" />} />
         <Route path="/30days" element={<Redirect to="/programs" />} />
