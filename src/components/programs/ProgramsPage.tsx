@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { GraduationCap, Users, User, Mountain, Clock, Sparkles, Heart } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import CoachingCheckoutDialog from "@/components/programs/CoachingCheckoutDialog";
 
 type Audience = "all" | "aspiring-teachers" | "corporate" | "individuals";
 
@@ -105,6 +106,7 @@ const filters: { label: string; value: Audience }[] = [
 
 const ProgramsPage = () => {
   const [activeFilter, setActiveFilter] = useState<Audience>("all");
+  const [coachingOpen, setCoachingOpen] = useState(false);
 
   const filtered =
     activeFilter === "all"
@@ -215,9 +217,19 @@ const ProgramsPage = () => {
                       {program.duration}
                     </p>
                   </div>
-                  <Button asChild size="sm" variant={program.featured ? "default" : "outline"}>
-                    <Link to={program.link}>{program.cta}</Link>
-                  </Button>
+                  {program.title === "Private Coaching" ? (
+                    <Button
+                      size="sm"
+                      variant={program.featured ? "default" : "outline"}
+                      onClick={() => setCoachingOpen(true)}
+                    >
+                      {program.cta}
+                    </Button>
+                  ) : (
+                    <Button asChild size="sm" variant={program.featured ? "default" : "outline"}>
+                      <Link to={program.link}>{program.cta}</Link>
+                    </Button>
+                  )}
                 </div>
               </motion.div>
             ))}
@@ -260,6 +272,8 @@ const ProgramsPage = () => {
           </motion.div>
         </div>
       </section>
+
+      <CoachingCheckoutDialog open={coachingOpen} onOpenChange={setCoachingOpen} />
     </div>
   );
 };
