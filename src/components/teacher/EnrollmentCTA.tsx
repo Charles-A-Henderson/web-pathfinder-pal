@@ -40,7 +40,7 @@ const EnrollmentCTA = ({ autoOpenForm = false }: EnrollmentCTAProps) => {
 
           <div className="bg-primary-foreground/10 rounded-2xl p-8 md:p-10 mb-8 backdrop-blur-sm border border-primary-foreground/10">
             <p className="text-sm uppercase tracking-wider text-primary-foreground/60 mb-2">Full Program</p>
-            <p className="font-serif text-5xl font-bold mb-1">$2,200</p>
+            <p className="font-serif text-5xl font-bold mb-1">$3,000</p>
             <p className="text-primary-foreground/60 text-sm mb-8">Payment plans available · Scholarships up to 50% off</p>
 
             <div className="grid sm:grid-cols-2 gap-3 text-left max-w-md mx-auto mb-8">

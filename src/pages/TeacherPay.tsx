@@ -54,7 +54,7 @@ const TeacherPay = () => {
     <>
       <SEO
         title="Enroll & Pay — Teacher Training | The Path"
-        description="Complete your enrollment in The Path's meditation teacher training program. $2,200 for the full 12-week certification."
+        description="Complete your enrollment in The Path's meditation teacher training program. $3,000 for the full 12-week certification."
       />
       <Navbar />
 
@@ -96,14 +96,14 @@ const TeacherPay = () => {
                 <div className="border-t border-border pt-4 space-y-2">
                   <div className="flex justify-between text-sm text-muted-foreground">
                     <span>Full Program</span>
-                    <span>$2,200.00</span>
+                    <span>$3,000.00</span>
                   </div>
                   <div className="flex justify-between text-sm text-muted-foreground">
                     <span>Payment plans available</span>
                   </div>
                   <div className="border-t border-border pt-3 flex justify-between font-serif text-lg font-bold text-foreground">
                     <span>Total</span>
-                    <span>$2,200.00</span>
+                    <span>$3,000.00</span>
                   </div>
                 </div>
 
@@ -240,7 +240,7 @@ const TeacherPay = () => {
                   ) : (
                     <>
                       <Lock className="h-4 w-4 mr-2" />
-                      Pay $2,200.00
+                      Pay $3,000.00
                     </>
                   )}
                 </Button>
