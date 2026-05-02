@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/home/HeroSection";
+import PanareaBanner from "@/components/home/PanareaBanner";
 import SocialProofBar from "@/components/home/SocialProofBar";
 import WhoItsFor from "@/components/home/WhoItsFor";
 import Testimonials from "@/components/home/Testimonials";
@@ -28,6 +29,7 @@ const Index = () => {
       <Navbar />
       <main>
         <HeroSection />
+        <PanareaBanner />
         <SocialProofBar />
         <WhoItsFor />
         <FeaturedQuote />
