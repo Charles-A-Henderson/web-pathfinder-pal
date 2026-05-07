@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { GraduationCap, Users, User, Mountain, Clock, Sparkles, Heart } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import CoachingCheckoutDialog from "@/components/programs/CoachingCheckoutDialog";
+
 
 type Audience = "all" | "aspiring-teachers" | "corporate" | "individuals";
 
@@ -56,7 +56,7 @@ const programs: Program[] = [
     duration: "Ongoing",
     icon: <User className="h-6 w-6" />,
     cta: "Book a Session",
-    link: "/about",
+    link: "mailto:sit@thepath.com?subject=Private%20Coaching%20Inquiry",
     tags: ["Personalized", "Flexible Schedule"],
   },
   {
@@ -106,7 +106,6 @@ const filters: { label: string; value: Audience }[] = [
 
 const ProgramsPage = () => {
   const [activeFilter, setActiveFilter] = useState<Audience>("all");
-  const [coachingOpen, setCoachingOpen] = useState(false);
 
   const filtered =
     activeFilter === "all"
@@ -217,13 +216,9 @@ const ProgramsPage = () => {
                       {program.duration}
                     </p>
                   </div>
-                  {program.title === "Private Coaching" ? (
-                    <Button
-                      size="sm"
-                      variant={program.featured ? "default" : "outline"}
-                      onClick={() => setCoachingOpen(true)}
-                    >
-                      {program.cta}
+                  {program.link.startsWith("mailto:") || program.link.startsWith("http") ? (
+                    <Button asChild size="sm" variant={program.featured ? "default" : "outline"}>
+                      <a href={program.link}>{program.cta}</a>
                     </Button>
                   ) : (
                     <Button asChild size="sm" variant={program.featured ? "default" : "outline"}>
@@ -273,7 +268,6 @@ const ProgramsPage = () => {
         </div>
       </section>
 
-      <CoachingCheckoutDialog open={coachingOpen} onOpenChange={setCoachingOpen} />
     </div>
   );
 };
