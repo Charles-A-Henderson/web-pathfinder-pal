@@ -36,7 +36,6 @@ const AnimatedRoutes = () => {
         <Route path="/retreats" element={<PageTransition><Retreats /></PageTransition>} />
 
         {/* 301-style redirects: old thepath.com routes → new routes */}
-        <Route path="/teacherpay" element={<Redirect to="/teacher-training" />} />
         <Route path="/costarica" element={<PageTransition><CostaRica /></PageTransition>} />
         <Route path="/panarea" element={<PageTransition><Panarea /></PageTransition>} />
         <Route path="/teacher" element={<Redirect to="/teacher-training" />} />
